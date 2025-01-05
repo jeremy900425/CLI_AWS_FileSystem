@@ -4,7 +4,6 @@ from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 import bcrypt
-# 用於對稱加密
 from cryptography.hazmat.primitives import padding as symmetric_padding
 import secrets
 import json

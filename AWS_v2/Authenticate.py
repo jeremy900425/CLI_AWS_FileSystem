@@ -10,7 +10,7 @@ import requests
 class Authenticate:
     SECRET_KEY = "my_super_secret_key"  # 用來生成 HMAC
 
-    def __init__(self, env_path='.env'):
+    def __init__(self, env_path='./AWS_v2/.env'):
         self.env_path = env_path
         self._ensure_env_file()
         load_dotenv(self.env_path)
@@ -18,7 +18,12 @@ class Authenticate:
     def _ensure_env_file(self):
         if not os.path.exists(self.env_path):
             with open(self.env_path, 'w') as f:
-                f.write("DBtoken=\n")
+                f.write('DB_HOST="mydb.c7mgm26yshd5.ap-northeast-1.rds.amazonaws.com"\n')
+                f.write('DB_PORT="5432"\n')
+                f.write('DB_NAME="postgres"\n')
+                f.write('DB_USER="postgres"\n')
+                f.write('DB_PASSWORD="ssvs6337A"\n')
+                f.write('signature_=""\n')
     def normal_login(self, username, password):
         lambda_url = "https://azvjohpdvrpq47m36cv2kkump40kcouw.lambda-url.ap-northeast-1.on.aws/"
         headers = {"Content-Type": "application/json"}

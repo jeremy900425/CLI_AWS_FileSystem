@@ -44,11 +44,9 @@ def main():
 
     fileDownload_parser = subparsers.add_parser("fileDownload", help="<FileName>")
     fileDownload_parser.add_argument("FileName", help="檔案名稱")
-
     
     checkToken_parser = subparsers.add_parser("checkToken", help="(No parameter)This command can check the token How long it will be expired")
     logout_parser = subparsers.add_parser("logout", help="(No parameter)This command can logout the user")
-
 
     args = parser.parse_args()
 
